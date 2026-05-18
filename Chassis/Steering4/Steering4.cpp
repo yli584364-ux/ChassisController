@@ -50,7 +50,7 @@ void Steering4::applyVelocity(const Velocity& velocity)
         const float vxi       = velocity.vx - wz_rad * yi;
         const float vyi       = velocity.vy + wz_rad * xi;
         const float speed = std::hypot(vxi, vyi);
-        if (fabsf(speed) < 0.05f)
+        if (speed < 0.05f)
         {
             // 速度为零，无须转向
             wheel_[i].setTargetVelocity({
